@@ -8,7 +8,6 @@ namespace IA
 {
     public partial class Form1 : Form
     {
-        private int[,] mat;
         public Form1()
         {
             InitializeComponent();
@@ -97,7 +96,7 @@ namespace IA
             LabelEntrada.Text = " " + entrada;
             LabelSalida.Text = " " + salida;
             LabelPatron.Text = " " + ancho;
-            Imprimir(salida, ancho);
+            Imprimir(salida, entrada);
         }
         private Boolean CicloRevision(string linea, int n, int m)
         {
@@ -147,31 +146,33 @@ namespace IA
         {
             HabilitarBoton();
         }
-        private void Inicializacion()
+        private void imprimirMatriz(int[,] matriz, int entrada, int salida)
         {
-            Random rnd = new Random();
-            for (int j = -1; j <= 1; j++)
+            for (int k = 0; k < entrada; k++)
             {
-                Console.WriteLine(rnd.NextDouble());
+                for (int l = 0; l < salida; l++)
+                {
+
+                    //foreach (int i in matriz)
+                    //{
+                        
+                    //}
+                }
 
             }
         }
-        public void Imprimir(int salida, int ancho)
+        private void Imprimir(int salida, int entrada)
         {
-            Random rnd = new Random();
-            for (int a = 0; a < ancho; a++)
+            int[,] matriz = new int[entrada, salida];
+            Random aleatorio = new Random();
+            for (int i = 0; i < entrada; i++)
             {
-                for (int c = 0; c < salida; c++)
+                for (int J = 0; J < salida; J++)
                 {
-                    for (int j = -1; j <= 1; j++)
-                    {
-                        Console.WriteLine(rnd.NextDouble());
-                    }
-                    Console.Write(mat[a, c] + " ");
+                    matriz[i, J] = aleatorio.Next(-1, 1);
                 }
-                Console.WriteLine();
             }
-            Console.ReadKey();
+            imprimirMatriz(matriz, entrada, salida);
         }
     }
 }

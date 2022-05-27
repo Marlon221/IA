@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.GboxConfiguracion = new System.Windows.Forms.GroupBox();
+            this.CBoxCapas = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.LabelMensaje = new System.Windows.Forms.Label();
             this.BtnMontarArchivo = new System.Windows.Forms.Button();
             this.CBoxEntrenamiento = new System.Windows.Forms.ComboBox();
@@ -46,10 +48,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.LabelTamaño = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.CBoxCapas = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.DataGridMatriz = new System.Windows.Forms.DataGridView();
             this.GboxConfiguracion.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridMatriz)).BeginInit();
             this.SuspendLayout();
             // 
             // GboxConfiguracion
@@ -70,6 +74,28 @@
             this.GboxConfiguracion.TabIndex = 0;
             this.GboxConfiguracion.TabStop = false;
             this.GboxConfiguracion.Text = "Configuracion";
+            // 
+            // CBoxCapas
+            // 
+            this.CBoxCapas.FormattingEnabled = true;
+            this.CBoxCapas.Items.AddRange(new object[] {
+            "Perceptron",
+            "Adaline",
+            "Backpropagation"});
+            this.CBoxCapas.Location = new System.Drawing.Point(107, 50);
+            this.CBoxCapas.Name = "CBoxCapas";
+            this.CBoxCapas.Size = new System.Drawing.Size(199, 23);
+            this.CBoxCapas.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(6, 52);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 23);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Capas: ";
             // 
             // LabelMensaje
             // 
@@ -235,33 +261,31 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Tamaño de la matriz: ";
             // 
-            // CBoxCapas
+            // groupBox2
             // 
-            this.CBoxCapas.FormattingEnabled = true;
-            this.CBoxCapas.Items.AddRange(new object[] {
-            "Perceptron",
-            "Adaline",
-            "Backpropagation"});
-            this.CBoxCapas.Location = new System.Drawing.Point(107, 50);
-            this.CBoxCapas.Name = "CBoxCapas";
-            this.CBoxCapas.Size = new System.Drawing.Size(199, 23);
-            this.CBoxCapas.TabIndex = 9;
+            this.groupBox2.Controls.Add(this.DataGridMatriz);
+            this.groupBox2.Location = new System.Drawing.Point(12, 342);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(328, 188);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Matriz";
             // 
-            // label5
+            // DataGridMatriz
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(6, 52);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 23);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Capas: ";
+            this.DataGridMatriz.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridMatriz.Location = new System.Drawing.Point(9, 22);
+            this.DataGridMatriz.Name = "DataGridMatriz";
+            this.DataGridMatriz.RowTemplate.Height = 25;
+            this.DataGridMatriz.Size = new System.Drawing.Size(240, 150);
+            this.DataGridMatriz.TabIndex = 1;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 542);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.GboxConfiguracion);
             this.Name = "Form1";
@@ -270,6 +294,8 @@
             this.GboxConfiguracion.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridMatriz)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -296,5 +322,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox CBoxCapas;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridView DataGridMatriz;
     }
 }
