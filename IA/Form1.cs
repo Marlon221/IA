@@ -102,7 +102,7 @@ namespace IA
             LabelSalida.Text = " " + salida;
             LabelPatron.Text = " " + ancho;
             GboxDatos.Enabled = true;
-            LlenarMatriz(salida, entrada);
+            BtnGuardar_Click(salida, entrada);
         }
         //Conteo de entradas, salidas y patrones
         private Boolean CicloRevision(string linea, int n, int m)
@@ -157,7 +157,7 @@ namespace IA
         //Inicializar pesos y umbrales
         private void LlenarMatriz(int salida, int entrada)
         {
-            int[,] matriz = new int[entrada, salida];
+            double[,] matriz = new double[entrada, salida];
             Random aleatorio = new Random();
             for (int i = 0; i < entrada; i++)
             {
@@ -166,7 +166,7 @@ namespace IA
                     matriz[i, J] = aleatorio.Next(-1, 1);
                 }
             }
-            int[] array = new int[salida];
+            double[] array = new double[salida];
             Random randomize = new Random();
             for (int k = 0; k < salida; k++)
             {
@@ -174,7 +174,7 @@ namespace IA
             }
         }
         //Funcion de activacion y algoritmos de entrenamiento
-        private void FuncionActivacion(int[,] matriz, int entrada, int salida)
+        private void FuncionActivacion(double[,] matriz, double[] array, int entrada, int salida)
         {
             if (CBoxFuncion.Text == "Escalon")
             {
@@ -191,7 +191,6 @@ namespace IA
                         }
                     }
                 }
-                int[] array = new int[salida];
                 for (int k = 0; k < salida + 1; k++)
                 {
                     if (array[k] >= 0)
@@ -206,34 +205,46 @@ namespace IA
             }
         }
         //Guardar en archivo
-        private void GuardarPesosUmbrales(int iteraccion, double aprendizaje, double error)
+        private void GuardarPesosUmbrales(double[,] matriz, double[] array, int entrada, int salida)
         {
             try
             {
                 FileStream file = new FileStream(FileName, FileMode.Append);
                 StreamWriter writer = new StreamWriter(file);
-                writer.WriteLine($"{iteraccion};{aprendizaje};{error}");
+                for (int i = 0; i < entrada; i++)
+                {
+                    for (int J = 0; J < salida; J++)
+                    {
+                        writer.WriteLine($"peso: {matriz[i,J]}");
+                    }
+                }
+                for (int k = 0; k < salida; k++)
+                {
+                    writer.WriteLine($"umbral: {array[k]}");
+                }
                 writer.Close();
                 file.Close();
                 MessageBox.Show("Archivo guardado con exito");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show("No Se Pudo Cargar El Archivo" + e.Message);
             }
         }
         //Almacenar datos
-        private void BtnGuardar_Click()
+        private void BtnGuardar_Click(int salida, int entrada)
         {
-            int iteraccion = int.Parse(TBiteraccion.Text);
-            double aprendizaje = double.Parse(TboxAprendizaje.Text);
-            double error = double.Parse(TbError.Text);
-            GuardarPesosUmbrales(iteraccion, aprendizaje, error);
+            GuardarPesosUmbrales(entrada, salida);
+            LlenarMatriz(salida, entrada);
+            //int iteraccion = int.Parse(TBiteraccion.Text);
+            //double aprendizaje = double.Parse(TboxAprendizaje.Text);
+            //double error = double.Parse(TbError.Text);
+            //GuardarPesosUmbrales(iteraccion, aprendizaje, error);
         }
         //Iniciar entrenamiento
         private void BtnEntrenar_Click()
         {
-
+            //Procedimientos de entrenamiento
         }
     }
 }
