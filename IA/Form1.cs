@@ -13,7 +13,6 @@ namespace IA
             InitializeComponent();
             BtnMontarArchivo.Enabled = false;
             GboxDatos.Enabled = false;
-            GBoxEntrenamiento.Enabled = false;
         }
         // Seleccion tipo de neurona a entrenar
         private void LlenarConfiguracion()
@@ -213,9 +212,10 @@ namespace IA
             }
         }
         //Habilitar configuracion de la red
-        private void BtnConfigurar_Click(object sender, EventArgs e)
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            GBoxEntrenamiento.Enabled = true;
+            BancoDatos();
         }
     }
 }
