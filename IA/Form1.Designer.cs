@@ -40,21 +40,22 @@
             this.CBoxRed = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.GboxDatos = new System.Windows.Forms.GroupBox();
+            this.TbError = new System.Windows.Forms.TextBox();
+            this.BtnEntrenar = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             this.LabelPatron = new System.Windows.Forms.Label();
+            this.TboxAprendizaje = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.LabelSalida = new System.Windows.Forms.Label();
+            this.TBiteraccion = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.LabelEntrada = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.LabelTamaño = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.TbError = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.TboxAprendizaje = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.TBiteraccion = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
+            this.BtnGuardar = new System.Windows.Forms.Button();
             this.GboxConfiguracion.SuspendLayout();
             this.GboxDatos.SuspendLayout();
             this.SuspendLayout();
@@ -181,8 +182,9 @@
             // 
             // GboxDatos
             // 
+            this.GboxDatos.Controls.Add(this.BtnGuardar);
             this.GboxDatos.Controls.Add(this.TbError);
-            this.GboxDatos.Controls.Add(this.button1);
+            this.GboxDatos.Controls.Add(this.BtnEntrenar);
             this.GboxDatos.Controls.Add(this.label11);
             this.GboxDatos.Controls.Add(this.LabelPatron);
             this.GboxDatos.Controls.Add(this.TboxAprendizaje);
@@ -203,6 +205,32 @@
             this.GboxDatos.TabStop = false;
             this.GboxDatos.Text = "Entrenamiento neurona";
             // 
+            // TbError
+            // 
+            this.TbError.Location = new System.Drawing.Point(169, 188);
+            this.TbError.Name = "TbError";
+            this.TbError.Size = new System.Drawing.Size(78, 23);
+            this.TbError.TabIndex = 14;
+            // 
+            // BtnEntrenar
+            // 
+            this.BtnEntrenar.Location = new System.Drawing.Point(109, 216);
+            this.BtnEntrenar.Name = "BtnEntrenar";
+            this.BtnEntrenar.Size = new System.Drawing.Size(138, 39);
+            this.BtnEntrenar.TabIndex = 6;
+            this.BtnEntrenar.Text = "Iniciar entrenamiento";
+            this.BtnEntrenar.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(6, 190);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(158, 23);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "Error maximo permitido: ";
+            // 
             // LabelPatron
             // 
             this.LabelPatron.AutoSize = true;
@@ -210,6 +238,13 @@
             this.LabelPatron.Name = "LabelPatron";
             this.LabelPatron.Size = new System.Drawing.Size(0, 15);
             this.LabelPatron.TabIndex = 7;
+            // 
+            // TboxAprendizaje
+            // 
+            this.TboxAprendizaje.Location = new System.Drawing.Point(169, 152);
+            this.TboxAprendizaje.Name = "TboxAprendizaje";
+            this.TboxAprendizaje.Size = new System.Drawing.Size(78, 23);
+            this.TboxAprendizaje.TabIndex = 12;
             // 
             // label8
             // 
@@ -220,6 +255,16 @@
             this.label8.TabIndex = 6;
             this.label8.Text = "Patrones: ";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(6, 154);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(134, 23);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Rata de aprendizaje: ";
+            // 
             // LabelSalida
             // 
             this.LabelSalida.AutoSize = true;
@@ -227,6 +272,13 @@
             this.LabelSalida.Name = "LabelSalida";
             this.LabelSalida.Size = new System.Drawing.Size(0, 15);
             this.LabelSalida.TabIndex = 5;
+            // 
+            // TBiteraccion
+            // 
+            this.TBiteraccion.Location = new System.Drawing.Point(169, 119);
+            this.TBiteraccion.Name = "TBiteraccion";
+            this.TBiteraccion.Size = new System.Drawing.Size(78, 23);
+            this.TBiteraccion.TabIndex = 10;
             // 
             // label7
             // 
@@ -254,6 +306,16 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "Entradas: ";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(6, 121);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(157, 23);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Numero de iteracciones: ";
+            // 
             // LabelTamaño
             // 
             this.LabelTamaño.AutoSize = true;
@@ -271,66 +333,15 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Tamaño de la matriz: ";
             // 
-            // TbError
+            // BtnGuardar
             // 
-            this.TbError.Location = new System.Drawing.Point(169, 188);
-            this.TbError.Name = "TbError";
-            this.TbError.Size = new System.Drawing.Size(78, 23);
-            this.TbError.TabIndex = 14;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(6, 190);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(158, 23);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Error maximo permitido: ";
-            // 
-            // TboxAprendizaje
-            // 
-            this.TboxAprendizaje.Location = new System.Drawing.Point(169, 152);
-            this.TboxAprendizaje.Name = "TboxAprendizaje";
-            this.TboxAprendizaje.Size = new System.Drawing.Size(78, 23);
-            this.TboxAprendizaje.TabIndex = 12;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(6, 154);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(134, 23);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Rata de aprendizaje: ";
-            // 
-            // TBiteraccion
-            // 
-            this.TBiteraccion.Location = new System.Drawing.Point(169, 119);
-            this.TBiteraccion.Name = "TBiteraccion";
-            this.TBiteraccion.Size = new System.Drawing.Size(78, 23);
-            this.TBiteraccion.TabIndex = 10;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(57, 216);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 39);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Iniciar entrenamiento";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(6, 121);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(157, 23);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Numero de iteracciones: ";
+            this.BtnGuardar.Location = new System.Drawing.Point(9, 216);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.Size = new System.Drawing.Size(94, 39);
+            this.BtnGuardar.TabIndex = 15;
+            this.BtnGuardar.Text = "Guardar campos";
+            this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // Form1
             // 
@@ -376,7 +387,9 @@
         private System.Windows.Forms.TextBox TboxAprendizaje;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox TBiteraccion;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnEntrenar;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button BtnGuardarCampos;
+        private System.Windows.Forms.Button BtnGuardar;
     }
 }

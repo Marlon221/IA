@@ -1,13 +1,13 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace IA
 {
     public partial class Form1 : Form
     {
+        private string FileName = "Pesos_Y_Umbrales.txt";
         public Form1()
         {
             InitializeComponent();
@@ -173,13 +173,6 @@ namespace IA
                 array[k] = aleatorio.Next(-1, 1);
             }
         }
-
-        private void BancoDatos()
-        {
-            int iteraccion = int.Parse(TBiteraccion.Text);
-            int aprendizaje = int.Parse(TboxAprendizaje.Text);
-            int error = int.Parse(TbError.Text);
-        }
         //Funcion de activacion y algoritmos de entrenamiento
         private void FuncionActivacion(int[,] matriz, int entrada, int salida)
         {
@@ -191,9 +184,9 @@ namespace IA
                     {
                         if(matriz[i, valor] >= 0)
                         {
-
+                            //calculo de S, Yr escalon,  y error lineal
                         }else if(matriz[i, valor] < 0){
-
+                            //calculo de S, Yr escalon,  y error lineal
                         }
                     }
                 }
@@ -202,20 +195,44 @@ namespace IA
                 {
                     if (array[k] >= 0)
                     {
-
+                        //calculo de S, Yr escalon,  y error lineal
                     }
                     else if (array[k] < 0)
                     {
-
+                        //calculo de S, Yr escalon,  y error lineal
                     }
                 }
             }
         }
-        //Habilitar configuracion de la red
-
-        private void button1_Click(object sender, EventArgs e)
+        //Guardar en archivo
+        private void GuardarPesosUmbrales(int iteraccion, double aprendizaje, double error)
         {
-            BancoDatos();
+            try
+            {
+                FileStream file = new FileStream(FileName, FileMode.Append);
+                StreamWriter writer = new StreamWriter(file);
+                writer.WriteLine($"{iteraccion};{aprendizaje};{error}");
+                writer.Close();
+                file.Close();
+                MessageBox.Show("Archivo guardado con exito");
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("No Se Pudo Cargar El Archivo" + e.Message);
+            }
+        }
+        //Almacenar datos
+        private void BtnGuardar_Click()
+        {
+            int iteraccion = int.Parse(TBiteraccion.Text);
+            double aprendizaje = double.Parse(TboxAprendizaje.Text);
+            double error = double.Parse(TbError.Text);
+            GuardarPesosUmbrales(iteraccion, aprendizaje, error);
+        }
+        //Iniciar entrenamiento
+        private void BtnEntrenar_Click()
+        {
+
         }
     }
 }
