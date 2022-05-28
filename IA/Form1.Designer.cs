@@ -55,7 +55,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.LabelTamaño = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.BtnGuardar = new System.Windows.Forms.Button();
             this.GboxConfiguracion.SuspendLayout();
             this.GboxDatos.SuspendLayout();
             this.SuspendLayout();
@@ -182,7 +181,6 @@
             // 
             // GboxDatos
             // 
-            this.GboxDatos.Controls.Add(this.BtnGuardar);
             this.GboxDatos.Controls.Add(this.TbError);
             this.GboxDatos.Controls.Add(this.BtnEntrenar);
             this.GboxDatos.Controls.Add(this.label11);
@@ -214,7 +212,7 @@
             // 
             // BtnEntrenar
             // 
-            this.BtnEntrenar.Location = new System.Drawing.Point(109, 216);
+            this.BtnEntrenar.Location = new System.Drawing.Point(57, 216);
             this.BtnEntrenar.Name = "BtnEntrenar";
             this.BtnEntrenar.Size = new System.Drawing.Size(138, 39);
             this.BtnEntrenar.TabIndex = 6;
@@ -333,15 +331,6 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Tamaño de la matriz: ";
             // 
-            // BtnGuardar
-            // 
-            this.BtnGuardar.Location = new System.Drawing.Point(9, 216);
-            this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(94, 39);
-            this.BtnGuardar.TabIndex = 15;
-            this.BtnGuardar.Text = "Guardar campos";
-            this.BtnGuardar.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -389,6 +378,5 @@
         private System.Windows.Forms.Button BtnEntrenar;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button BtnGuardarCampos;
-        private System.Windows.Forms.Button BtnGuardar;
     }
 }

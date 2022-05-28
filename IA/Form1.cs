@@ -158,19 +158,22 @@ namespace IA
         private void LlenarMatriz(int salida, int entrada)
         {
             double[,] matriz = new double[entrada, salida];
+            double recupera;
             Random aleatorio = new Random();
             for (int i = 0; i < entrada; i++)
             {
                 for (int J = 0; J < salida; J++)
                 {
-                    matriz[i, J] = aleatorio.Next(-1, 1);
+                    recupera = aleatorio.Next(-10, 11);
+                    matriz[i, J] = (recupera) / 10;
                 }
             }
             double[] array = new double[salida];
             Random randomize = new Random();
             for (int k = 0; k < salida; k++)
             {
-                array[k] = aleatorio.Next(-1, 1);
+                recupera = aleatorio.Next(-10, 11);
+                array[k] = (recupera) / 10;
             }
             GuardarPesosUmbrales(matriz, array, entrada, salida);
         }
@@ -210,7 +213,7 @@ namespace IA
         {
             try
             {
-                FileStream file = new FileStream(FileName, FileMode.Append);
+                FileStream file = new FileStream(FileName, FileMode.Create);
                 StreamWriter writer = new StreamWriter(file);
                 for (int i = 0; i < entrada; i++)
                 {
