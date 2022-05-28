@@ -185,7 +185,8 @@ namespace IA
                         if(matriz[i, valor] >= 0)
                         {
                             //calculo de S, Yr escalon,  y error lineal
-                        }else if(matriz[i, valor] < 0){
+                        }
+                        else if(matriz[i, valor] < 0){
                             //calculo de S, Yr escalon,  y error lineal
                         }
                     }

@@ -341,7 +341,6 @@
             this.BtnGuardar.TabIndex = 15;
             this.BtnGuardar.Text = "Guardar campos";
             this.BtnGuardar.UseVisualStyleBackColor = true;
-            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // Form1
             // 
