@@ -12,7 +12,10 @@ namespace IA
         {
             InitializeComponent();
             BtnMontarArchivo.Enabled = false;
+            GboxDatos.Enabled = false;
+            GBoxEntrenamiento.Enabled = false;
         }
+        // Seleccion tipo de neurona a entrenar
         private void LlenarConfiguracion()
         {
             CBoxFuncion.Items.Clear();
@@ -37,6 +40,7 @@ namespace IA
             CBoxCapas.Items.Add("Unicapa");
             CBoxCapas.Items.Add("Multicapa");
         }
+        //habilitar o deshabilitar opcion de montar banco de datos
         private void HabilitarBoton()
         {
             if (CBoxEntrenamiento.Text.Equals("") || CBoxFuncion.Text.Equals(""))
@@ -48,6 +52,7 @@ namespace IA
                 BtnMontarArchivo.Enabled = true;
             }
         }
+        //Montar banco de datos
         private void BtnMontarArchivo_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
@@ -60,6 +65,7 @@ namespace IA
                 MessageBox.Show("Error al cargar el archivo");
             }
         }
+        //Leer banco de datos
         private void Leer(string fileName)
         {
             int Ancho = 0, Alto = 0, Entrada = 0, Salida = 0, flagn = 0, flagm = 0;
@@ -88,16 +94,18 @@ namespace IA
             reader.Close();
             file.Close();
             PintarDatos(Ancho, Entrada, Salida);
-
         }
+        //Mostrar parametros de matriz de datos
         private void PintarDatos(int ancho, int entrada, int salida)
         {
             LabelTamaño.Text = entrada + " x " + salida;
             LabelEntrada.Text = " " + entrada;
             LabelSalida.Text = " " + salida;
             LabelPatron.Text = " " + ancho;
-            Imprimir(salida, entrada);
+            GboxDatos.Enabled = true;
+            LlenarMatriz(salida, entrada);
         }
+        //Conteo de entradas, salidas y patrones
         private Boolean CicloRevision(string linea, int n, int m)
         {
             if (ContinuaEntrando(linea, n) || ContinuaSaliendo(linea, m))
@@ -133,6 +141,7 @@ namespace IA
                 return false;
             }
         }
+        //Habilitar boton para montar banco de datos
         private void CBoxRed_SelectedIndexChanged(object sender, EventArgs e)
         {
             LlenarConfiguracion();
@@ -146,22 +155,8 @@ namespace IA
         {
             HabilitarBoton();
         }
-        private void imprimirMatriz(int[,] matriz, int entrada, int salida)
-        {
-            for (int k = 0; k < entrada; k++)
-            {
-                for (int l = 0; l < salida; l++)
-                {
-
-                    //foreach (int i in matriz)
-                    //{
-                        
-                    //}
-                }
-
-            }
-        }
-        private void Imprimir(int salida, int entrada)
+        //Inicializar pesos y umbrales
+        private void LlenarMatriz(int salida, int entrada)
         {
             int[,] matriz = new int[entrada, salida];
             Random aleatorio = new Random();
@@ -172,7 +167,55 @@ namespace IA
                     matriz[i, J] = aleatorio.Next(-1, 1);
                 }
             }
-            imprimirMatriz(matriz, entrada, salida);
+            int[] array = new int[salida];
+            Random randomize = new Random();
+            for (int k = 0; k < salida; k++)
+            {
+                array[k] = aleatorio.Next(-1, 1);
+            }
+        }
+
+        private void BancoDatos()
+        {
+            int iteraccion = int.Parse(TBiteraccion.Text);
+            int aprendizaje = int.Parse(TboxAprendizaje.Text);
+            int error = int.Parse(TbError.Text);
+        }
+        //Funcion de activacion y algoritmos de entrenamiento
+        private void FuncionActivacion(int[,] matriz, int entrada, int salida)
+        {
+            if (CBoxFuncion.Text == "Escalon")
+            {
+                for (int i = 0; i < entrada + 1; i++)
+                {
+                    for (int valor = 0; valor < salida + 1; valor++)
+                    {
+                        if(matriz[i, valor] >= 0)
+                        {
+
+                        }else if(matriz[i, valor] < 0){
+
+                        }
+                    }
+                }
+                int[] array = new int[salida];
+                for (int k = 0; k < salida + 1; k++)
+                {
+                    if (array[k] >= 0)
+                    {
+
+                    }
+                    else if (array[k] < 0)
+                    {
+
+                    }
+                }
+            }
+        }
+        //Habilitar configuracion de la red
+        private void BtnConfigurar_Click(object sender, EventArgs e)
+        {
+            GBoxEntrenamiento.Enabled = true;
         }
     }
 }

@@ -39,7 +39,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.CBoxRed = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.GboxDatos = new System.Windows.Forms.GroupBox();
+            this.BtnConfigurar = new System.Windows.Forms.Button();
             this.LabelPatron = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.LabelSalida = new System.Windows.Forms.Label();
@@ -48,12 +49,18 @@
             this.label6 = new System.Windows.Forms.Label();
             this.LabelTamaño = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.DataGridMatriz = new System.Windows.Forms.DataGridView();
+            this.GBoxEntrenamiento = new System.Windows.Forms.GroupBox();
+            this.TbError = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.TboxAprendizaje = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.TBiteraccion = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
             this.GboxConfiguracion.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridMatriz)).BeginInit();
+            this.GboxDatos.SuspendLayout();
+            this.GBoxEntrenamiento.SuspendLayout();
             this.SuspendLayout();
             // 
             // GboxConfiguracion
@@ -176,22 +183,33 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tipo de red: ";
             // 
-            // groupBox1
+            // GboxDatos
             // 
-            this.groupBox1.Controls.Add(this.LabelPatron);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.LabelSalida);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.LabelEntrada);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.LabelTamaño);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(12, 212);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(328, 124);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Resultados neurona";
+            this.GboxDatos.Controls.Add(this.BtnConfigurar);
+            this.GboxDatos.Controls.Add(this.LabelPatron);
+            this.GboxDatos.Controls.Add(this.label8);
+            this.GboxDatos.Controls.Add(this.LabelSalida);
+            this.GboxDatos.Controls.Add(this.label7);
+            this.GboxDatos.Controls.Add(this.LabelEntrada);
+            this.GboxDatos.Controls.Add(this.label6);
+            this.GboxDatos.Controls.Add(this.LabelTamaño);
+            this.GboxDatos.Controls.Add(this.label4);
+            this.GboxDatos.Location = new System.Drawing.Point(346, 21);
+            this.GboxDatos.Name = "GboxDatos";
+            this.GboxDatos.Size = new System.Drawing.Size(328, 185);
+            this.GboxDatos.TabIndex = 1;
+            this.GboxDatos.TabStop = false;
+            this.GboxDatos.Text = "Resultados neurona";
+            // 
+            // BtnConfigurar
+            // 
+            this.BtnConfigurar.Location = new System.Drawing.Point(107, 139);
+            this.BtnConfigurar.Name = "BtnConfigurar";
+            this.BtnConfigurar.Size = new System.Drawing.Size(113, 33);
+            this.BtnConfigurar.TabIndex = 10;
+            this.BtnConfigurar.Text = "Configurar la red.";
+            this.BtnConfigurar.UseVisualStyleBackColor = true;
+            this.BtnConfigurar.Click += new System.EventHandler(this.BtnConfigurar_Click);
             // 
             // LabelPatron
             // 
@@ -261,41 +279,107 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Tamaño de la matriz: ";
             // 
-            // groupBox2
+            // GBoxEntrenamiento
             // 
-            this.groupBox2.Controls.Add(this.DataGridMatriz);
-            this.groupBox2.Location = new System.Drawing.Point(12, 342);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(328, 188);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Matriz";
+            this.GBoxEntrenamiento.Controls.Add(this.TbError);
+            this.GBoxEntrenamiento.Controls.Add(this.label11);
+            this.GBoxEntrenamiento.Controls.Add(this.TboxAprendizaje);
+            this.GBoxEntrenamiento.Controls.Add(this.label9);
+            this.GBoxEntrenamiento.Controls.Add(this.TBiteraccion);
+            this.GBoxEntrenamiento.Controls.Add(this.label10);
+            this.GBoxEntrenamiento.Controls.Add(this.button1);
+            this.GBoxEntrenamiento.Controls.Add(this.label13);
+            this.GBoxEntrenamiento.Location = new System.Drawing.Point(12, 212);
+            this.GBoxEntrenamiento.Name = "GBoxEntrenamiento";
+            this.GBoxEntrenamiento.Size = new System.Drawing.Size(257, 194);
+            this.GBoxEntrenamiento.TabIndex = 10;
+            this.GBoxEntrenamiento.TabStop = false;
+            this.GBoxEntrenamiento.Text = "Parametros de entrenamiento";
             // 
-            // DataGridMatriz
+            // TbError
             // 
-            this.DataGridMatriz.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridMatriz.Location = new System.Drawing.Point(9, 22);
-            this.DataGridMatriz.Name = "DataGridMatriz";
-            this.DataGridMatriz.RowTemplate.Height = 25;
-            this.DataGridMatriz.Size = new System.Drawing.Size(240, 150);
-            this.DataGridMatriz.TabIndex = 1;
+            this.TbError.Location = new System.Drawing.Point(169, 86);
+            this.TbError.Name = "TbError";
+            this.TbError.Size = new System.Drawing.Size(78, 23);
+            this.TbError.TabIndex = 14;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(6, 88);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(158, 23);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "Error maximo permitido: ";
+            // 
+            // TboxAprendizaje
+            // 
+            this.TboxAprendizaje.Location = new System.Drawing.Point(169, 50);
+            this.TboxAprendizaje.Name = "TboxAprendizaje";
+            this.TboxAprendizaje.Size = new System.Drawing.Size(78, 23);
+            this.TboxAprendizaje.TabIndex = 12;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(6, 52);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(134, 23);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Rata de aprendizaje: ";
+            // 
+            // TBiteraccion
+            // 
+            this.TBiteraccion.Location = new System.Drawing.Point(169, 17);
+            this.TBiteraccion.Name = "TBiteraccion";
+            this.TBiteraccion.Size = new System.Drawing.Size(78, 23);
+            this.TBiteraccion.TabIndex = 10;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 160);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(0, 15);
+            this.label10.TabIndex = 7;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(75, 124);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 31);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Montar archivo";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(6, 19);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(157, 23);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Numero de iteracciones: ";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 542);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.GBoxEntrenamiento);
+            this.Controls.Add(this.GboxDatos);
             this.Controls.Add(this.GboxConfiguracion);
             this.Name = "Form1";
             this.Text = "Form1";
             this.GboxConfiguracion.ResumeLayout(false);
             this.GboxConfiguracion.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridMatriz)).EndInit();
+            this.GboxDatos.ResumeLayout(false);
+            this.GboxDatos.PerformLayout();
+            this.GBoxEntrenamiento.ResumeLayout(false);
+            this.GBoxEntrenamiento.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -311,7 +395,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox CBoxRed;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox GboxDatos;
         private System.Windows.Forms.Label LabelPatron;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label LabelSalida;
@@ -322,7 +406,15 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox CBoxCapas;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView DataGridMatriz;
+        private System.Windows.Forms.Button BtnConfigurar;
+        private System.Windows.Forms.GroupBox GBoxEntrenamiento;
+        private System.Windows.Forms.TextBox TbError;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox TboxAprendizaje;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox TBiteraccion;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label13;
     }
 }
