@@ -102,7 +102,7 @@ namespace IA
             LabelSalida.Text = " " + salida;
             LabelPatron.Text = " " + ancho;
             GboxDatos.Enabled = true;
-            BtnGuardar_Click(salida, entrada);
+            LlenarMatriz(salida, entrada);
         }
         //Conteo de entradas, salidas y patrones
         private Boolean CicloRevision(string linea, int n, int m)
@@ -172,6 +172,7 @@ namespace IA
             {
                 array[k] = aleatorio.Next(-1, 1);
             }
+            GuardarPesosUmbrales(matriz, array, entrada, salida);
         }
         //Funcion de activacion y algoritmos de entrenamiento
         private void FuncionActivacion(double[,] matriz, double[] array, int entrada, int salida)
@@ -230,16 +231,6 @@ namespace IA
             {
                 MessageBox.Show("No Se Pudo Cargar El Archivo" + e.Message);
             }
-        }
-        //Almacenar datos
-        private void BtnGuardar_Click(int salida, int entrada)
-        {
-            GuardarPesosUmbrales(entrada, salida);
-            LlenarMatriz(salida, entrada);
-            //int iteraccion = int.Parse(TBiteraccion.Text);
-            //double aprendizaje = double.Parse(TboxAprendizaje.Text);
-            //double error = double.Parse(TbError.Text);
-            //GuardarPesosUmbrales(iteraccion, aprendizaje, error);
         }
         //Iniciar entrenamiento
         private void BtnEntrenar_Click()
